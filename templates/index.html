@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Análisis de Código</title>
+    <link rel="stylesheet" href="../static/Style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Inserta:</h1>
+        <form method="POST">
+            <textarea name="code" placeholder="" required></textarea>
+            <button type="submit">Analizar</button>
+        </form>
+    
+        <table>
+            <thead>
+                <tr>
+                    <th>TOKEN</th>
+                    <th>PR</th>
+                    <th>ID</th>
+                    <th>CAD.</th>
+                    <th>NU.</th>
+                    <th>SI.</th>
+                    <th>TIPO</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for token in tokens %}
+                <tr>
+                    <td>{{ token.token }}</td>
+                    <td>{{ token.pr }}</td>
+                    <td>{{ token.id }}</td>
+                    <td>{{ token.cad }}</td>
+                    <td>{{ token.num }}</td>
+                    <td>{{ token.si }}</td>
+                    <td>{{ token.tipo }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
